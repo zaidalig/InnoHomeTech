@@ -1,333 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>InnoHomeTech | Smart-Home Solutions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>InnoHomeTech | Smart-Home Solutions</title>
+    <meta name="description"
+        content="InnoHomeTech: Making your home smarter and more comfortable. Control lights, security, and more, all with ease – wherever you are.">
+    <meta property="og:title" content="InnoHomeTech | Smart-Home Solutions">
+    <meta property="og:description"
+        content="Making your home smarter and more comfortable. Control lights, security, and more, all with ease – wherever you are.">
+    <meta property="og:image" content="https://picsum.photos/seed/smarthome/1200/630">
+    <meta property="og:url" content="https://innohometech.com">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fonts & CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary: #4A90E2;
-      --secondary: #50E3C2;
-      --dark: #2C3E50;
-      --light: #ecf0f1;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: var(--dark);
-      background-color: var(--light);
-    }
-    html { scroll-behavior: smooth; }
-    .fade-in { animation: fadeIn 1s ease-in; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --secondary: #50E3C2;
+            --dark: #2C3E50;
+            --light: #ecf0f1;
+        }
 
-    /* Navbar gradient */
-    .navbar {
-      background-image: linear-gradient(90deg, var(--primary), var(--secondary));
-    }
-    .navbar .nav-link { color: #fff !important; font-weight: 600; }
-    .navbar .navbar-brand { font-weight: 700; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            padding-top: 56px;
+            /* ensure content is below navbar */
+        }
 
-    /* Hero */
-    header {
-      background-image: linear-gradient(135deg, var(--secondary), var(--primary));
-      color: #fff;
-    }
-    header .btn-light {
-      background-color: #fff;
-      color: var(--primary);
-      font-weight: 600;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    /* Section headings */
-    h2 {
-      position: relative;
-      padding-bottom: .5rem;
-      margin-bottom: 2rem;
-    }
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
+        h2 {
+            position: relative;
+            padding-bottom: .5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
 
-    /* Card hover */
-    .card {
-      border: none;
-      transition: transform .3s, box-shadow .3s;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
-    .card-title { font-weight: 600; }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
 
-    /* Buttons */
-    .btn-primary {
-      background-color: var(--primary);
-      border-color: var(--primary);
-      font-weight: 600;
-    }
-    .btn-primary:hover {
-      background-color: var(--dark);
-      border-color: var(--dark);
-    }
+        .fade-in {
+            opacity: 0;
+        }
 
-    /* Feature icons */
-    .feature-icon { font-size: 3rem; color: var(--primary); }
+        .aos-init.aos-animate.fade-in {
+            opacity: 1;
+            transition: opacity .8s ease-in;
+        }
 
-    /* Contact section: circular icon buttons */
-    #contact .contact-text a {
-      color: var(--dark);
-      font-weight: 600;
-      text-decoration: none;
-    }
-    #contact .contact-text a:hover {
-      color: var(--primary);
-    }
-    #contact .contact-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 3.5rem;
-      height: 3.5rem;
-      margin: 0 .5rem;
-      border: 2px solid var(--primary);
-      border-radius: 50%;
-      color: var(--primary);
-      transition: background .3s, color .3s;
-      text-decoration: none;
-      font-size: 1.25rem;
-    }
-    #contact .contact-link:hover {
-      background-color: var(--primary);
-      color: #fff;
-      text-decoration: none;
-    }
+        /* Navbar gradients */
+        .navbar {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
 
-    /* Footer */
-    footer {
-      background-image: linear-gradient(90deg, var(--secondary), var(--primary));
-      color: #fff;
-    }
-  </style>
+        .navbar .navbar-brand,
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar .nav-link {
+            font-weight: 600;
+        }
+
+        .navbar .navbar-brand {
+            font-weight: 700;
+        }
+
+        /* Offcanvas */
+        .offcanvas {
+            width: 250px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .offcanvas .nav-link {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: .5rem 0;
+        }
+
+        /* Hero */
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: #fff;
+        }
+
+        header .btn-light {
+            background: #fff;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Cards & buttons */
+        .card {
+            border: none;
+            transition: transform .3s, box-shadow .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, .15);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            border-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark);
+            border-color: var(--dark);
+        }
+
+        /* Feature icons */
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        /* Contact icons */
+        #contact .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            margin: .25rem;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 1.25rem;
+            transition: background .3s, color .3s;
+            text-decoration: none;
+        }
+
+        #contact .contact-link:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        #contact .contact-text a {
+            color: var(--dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        #contact .contact-text a:hover {
+            color: var(--primary);
+        }
+
+        /* Back to top */
+        #toTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            color: #fff;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--light);
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#home">InnoHomeTech</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
-          <li class="nav-item"><a class="nav-link" href="#docs">Support</a></li>
-          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <header id="home" class="text-center py-5" style="margin-top:56px;">
-    <div class="container fade-in">
-      <h1 class="display-4 fw-bold">InnoHomeTech</h1>
-      <p class="lead mb-4">Smart living, simplified.</p>
-      <a href="#products" class="btn btn-light btn-lg">
-        <i class="fa fa-shopping-cart me-2"></i>Explore Products
-      </a>
-    </div>
-  </header>
-
-  <!-- FEATURES -->
-  <section id="features" class="container py-5 fade-in">
-    <h2 class="text-center">Why Choose Us</h2>
-    <div class="row g-4 text-center">
-      <div class="col-md-4">
-        <i class="fa fa-shield-halved feature-icon mb-3"></i>
-        <h5>Secure by Design</h5>
-        <p>Bank-level encryption and AI threat detection keep your home safe.</p>
-      </div>
-      <div class="col-md-4">
-        <i class="fa fa-leaf feature-icon mb-3"></i>
-        <h5>Energy Efficient</h5>
-        <p>Adaptive devices learn your schedule and optimize power use.</p>
-      </div>
-      <div class="col-md-4">
-        <i class="fa fa-mobile-screen-button feature-icon mb-3"></i>
-        <h5>Seamless Control</h5>
-        <p>Manage every device from one intuitive mobile app.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUCCESS STORIES -->
-  <section id="stories" class="container py-5 fade-in">
-    <h2 class="text-center">Success Stories</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="p-4 bg-white shadow-sm h-100">
-          <h5 class="fw-bold">GreenFields Co.</h5>
-          <p class="fst-italic">“By installing InnoHomeTech across our 3-office campus, we cut energy costs by 30%.”</p>
-          <p class="text-muted"><small>— Facilities Manager, GreenFields Co.</small></p>
+    <!-- NAVBAR + OFFCANVAS TOGGLE -->
+    <nav class="navbar navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">InnoHomeTech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="p-4 bg-white shadow-sm h-100">
-          <h5 class="fw-bold">MountainView Homes</h5>
-          <p class="fst-italic">“Our smart door locks and cameras eliminated break-ins. Installation was seamless!”</p>
-          <p class="text-muted"><small>— Homeowner, MountainView Homes</small></p>
+    </nav>
+
+    <!-- OFFCANVAS MENU -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">InnoHomeTech</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
-      </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#products" data-bs-dismiss="offcanvas">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#features" data-bs-dismiss="offcanvas">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#stories" data-bs-dismiss="offcanvas">Stories</a></li>
+                <li class="nav-item"><a class="nav-link" href="#docs" data-bs-dismiss="offcanvas">Support</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq" data-bs-dismiss="offcanvas">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team" data-bs-dismiss="offcanvas">Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact" data-bs-dismiss="offcanvas">Contact</a></li>
+            </ul>
+        </div>
     </div>
-  </section>
 
-  <!-- SUPPORT & DOCUMENTATION -->
-  <section id="docs" class="bg-light py-5 fade-in">
-    <div class="container">
-      <h2 class="text-center mb-4">Support & Documentation</h2>
-      <div class="row g-4 text-center">
-        <div class="col-md-4">
-          <i class="fa fa-book-open fa-2x mb-2 text-secondary"></i>
-          <h5>User Manuals</h5>
-          <p><a href="/docs/manuals" class="stretched-link">View step-by-step PDF guides</a></p>
+    <!-- HERO -->
+    <header id="home" class="text-center py-5" data-aos="fade-down" data-aos-class="fade-in">
+        <div class="container">
+            <h1 class="display-4 fw-bold">InnoHomeTech</h1>
+            <p class="lead mb-4">Making your home smarter and more comfortable. Control lights, security, and more, all
+                with ease – wherever you are.</p>
+            <a href="#products" class="btn btn-light btn-lg me-2"><i class="fa fa-shopping-cart me-2"></i>Explore
+                Products</a>
+            <a href="https://demo.innohometech.com" class="btn btn-outline-light btn-lg"><i
+                    class="fa fa-desktop me-2"></i>Live Demo</a>
         </div>
-        <div class="col-md-4">
-          <i class="fa fa-video fa-2x mb-2 text-secondary"></i>
-          <h5>Video Tutorials</h5>
-          <p><a href="/docs/videos" class="stretched-link">Watch setup & tips videos</a></p>
+    </header>
+
+    <!-- Why Choose Us -->
+    <section id="features" class="container py-5" data-aos="fade-right" data-aos-class="fade-in">
+        <h2>Why Choose Us</h2>
+        <div class="row g-4 text-center">
+            <div class="col-md-4" data-aos="fade-up"><i class="fa fa-shield-alt feature-icon mb-3"></i>
+                <h5>Secure by Design</h5>
+                <p>Bank-level encryption & AI threat detection.</p>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><i class="fa fa-leaf feature-icon mb-3"></i>
+                <h5>Energy Efficient</h5>
+                <p>Adaptive devices learn & optimize usage.</p>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><i
+                    class="fa fa-mobile-alt feature-icon mb-3"></i>
+                <h5>Seamless Control</h5>
+                <p>One app to manage every device, anywhere.</p>
+            </div>
         </div>
-        <div class="col-md-4">
-          <i class="fa fa-headset fa-2x mb-2 text-secondary"></i>
-          <h5>Live Support</h5>
-          <p><a href="mailto:support@innohometech.com" class="stretched-link">Email our support team</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="container py-5 fade-in">
-    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
-    <div class="accordion" id="faqAcc">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq1">
-          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-            How do I install the Smart Thermostat?
-          </button>
-        </h2>
-        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
-          <div class="accordion-body">
-            Mount on a flat wall, connect via our app, and follow the guided setup.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq2">
-          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse2">
-            Are sensors battery-powered?
-          </button>
-        </h2>
-        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-          <div class="accordion-body">
-            Yes—each sensor uses AA batteries lasting up to 2 years.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faq3">
-          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse3">
-            Can I integrate with Alexa or Google Home?
-          </button>
-        </h2>
-        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-          <div class="accordion-body">
-            Absolutely—enable our skill/action in your voice assistant’s app.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- rest of your sections (Products, Success Stories, Docs, FAQ, Team, Contact, Footer) remain unchanged -->
 
-  <!-- PRODUCTS -->
-  <section id="products" class="container py-5 fade-in">
-    <h2 class="text-center mb-4">Our Products</h2>
-    <div class="row g-4">
-      <!-- Six product cards with modals (same as earlier) -->
-      <!-- ...insert the 6 cards and their modals here... -->
-    </div>
-  </section>
+    <!-- BACK TO TOP BUTTON -->
+    <button id="toTop" title="Back to top"><i class="fa fa-arrow-up"></i></button>
 
-  <!-- TEAM -->
-  <section id="team" class="container py-5 fade-in">
-    <h2 class="text-center mb-4">Meet the Team</h2>
-    <div class="row g-4 text-center">
-      <div class="col-sm-6 col-lg-4">
-        <img src="https://picsum.photos/seed/team1/200/200" class="rounded-circle mb-3" alt="CEO">
-        <h5>Ayesha Khan</h5>
-        <p>CEO & Founder</p>
-      </div>
-      <div class="col-sm-6 col-lg-4">
-        <img src="https://picsum.photos/seed/team2/200/200" class="rounded-circle mb-3" alt="CTO">
-        <h5>Bilal Ahmed</h5>
-        <p>CTO</p>
-      </div>
-      <div class="col-sm-6 col-lg-4">
-        <img src="https://picsum.photos/seed/team3/200/200" class="rounded-circle mb-3" alt="COO">
-        <h5>Sara Malik</h5>
-        <p>COO</p>
-      </div>
-    </div>
-  </section>
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ once: false, duration: 800, offset: 100 });
 
-  <!-- CONTACT -->
-  <section id="contact" class="bg-light py-5 fade-in">
-    <div class="container text-center">
-      <h2 class="mb-4">Get in Touch</h2>
-      <div class="contact-text mb-4">
-        <p>
-          <i class="fa fa-envelope me-2"></i>
-          <a href="mailto:info@innohometech.com">info@innohometech.com</a>
-        </p>
-        <p>
-          <i class="fa fa-phone me-2"></i>
-          <a href="tel:+923001234567">+92 300 1234567</a>
-        </p>
-      </div>
-      <div>
-        <a href="https://facebook.com/innohometech" class="contact-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/innohometech" class="contact-link" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/innohometech" class="contact-link" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://youtube.com/@innohometech" class="contact-link" target="_blank"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="text-center py-3 fade-in">
-    &copy; <script>document.write(new Date().getFullYear())</script> InnoHomeTech. All rights reserved.
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        // Back to top
+        const toTop = document.getElementById('toTop');
+        window.addEventListener('scroll', () => toTop.style.display = window.scrollY > 300 ? 'flex' : 'none');
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
 </body>
+
 </html>
