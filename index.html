@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>InnoHomeTech | Smart-Home Solutions</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #4A90E2;
+      --secondary: #50E3C2;
+      --dark: #2C3E50;
+      --light: #ecf0f1;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+    }
+    html { scroll-behavior: smooth; }
+    .fade-in { animation: fadeIn 1s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Navbar gradient */
+    .navbar {
+      background-image: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+    .navbar .nav-link { color: #fff !important; font-weight: 600; }
+    .navbar .navbar-brand { font-weight: 700; }
+
+    /* Hero */
+    header {
+      background-image: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: #fff;
+    }
+    header .btn-light {
+      background-color: #fff;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Section headings */
+    h2 {
+      position: relative;
+      padding-bottom: .5rem;
+      margin-bottom: 2rem;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    /* Card hover */
+    .card {
+      border: none;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+    .card-title { font-weight: 600; }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+    .btn-primary:hover {
+      background-color: var(--dark);
+      border-color: var(--dark);
+    }
+
+    /* Feature icons */
+    .feature-icon { font-size: 3rem; color: var(--primary); }
+
+    /* Contact section: circular icon buttons */
+    #contact .contact-text a {
+      color: var(--dark);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    #contact .contact-text a:hover {
+      color: var(--primary);
+    }
+    #contact .contact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: 0 .5rem;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      color: var(--primary);
+      transition: background .3s, color .3s;
+      text-decoration: none;
+      font-size: 1.25rem;
+    }
+    #contact .contact-link:hover {
+      background-color: var(--primary);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      background-image: linear-gradient(90deg, var(--secondary), var(--primary));
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">InnoHomeTech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#docs">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="text-center py-5" style="margin-top:56px;">
+    <div class="container fade-in">
+      <h1 class="display-4 fw-bold">InnoHomeTech</h1>
+      <p class="lead mb-4">Smart living, simplified.</p>
+      <a href="#products" class="btn btn-light btn-lg">
+        <i class="fa fa-shopping-cart me-2"></i>Explore Products
+      </a>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section id="features" class="container py-5 fade-in">
+    <h2 class="text-center">Why Choose Us</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <i class="fa fa-shield-halved feature-icon mb-3"></i>
+        <h5>Secure by Design</h5>
+        <p>Bank-level encryption and AI threat detection keep your home safe.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa-leaf feature-icon mb-3"></i>
+        <h5>Energy Efficient</h5>
+        <p>Adaptive devices learn your schedule and optimize power use.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="fa fa-mobile-screen-button feature-icon mb-3"></i>
+        <h5>Seamless Control</h5>
+        <p>Manage every device from one intuitive mobile app.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS STORIES -->
+  <section id="stories" class="container py-5 fade-in">
+    <h2 class="text-center">Success Stories</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="p-4 bg-white shadow-sm h-100">
+          <h5 class="fw-bold">GreenFields Co.</h5>
+          <p class="fst-italic">“By installing InnoHomeTech across our 3-office campus, we cut energy costs by 30%.”</p>
+          <p class="text-muted"><small>— Facilities Manager, GreenFields Co.</small></p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="p-4 bg-white shadow-sm h-100">
+          <h5 class="fw-bold">MountainView Homes</h5>
+          <p class="fst-italic">“Our smart door locks and cameras eliminated break-ins. Installation was seamless!”</p>
+          <p class="text-muted"><small>— Homeowner, MountainView Homes</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT & DOCUMENTATION -->
+  <section id="docs" class="bg-light py-5 fade-in">
+    <div class="container">
+      <h2 class="text-center mb-4">Support & Documentation</h2>
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <i class="fa fa-book-open fa-2x mb-2 text-secondary"></i>
+          <h5>User Manuals</h5>
+          <p><a href="/docs/manuals" class="stretched-link">View step-by-step PDF guides</a></p>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-video fa-2x mb-2 text-secondary"></i>
+          <h5>Video Tutorials</h5>
+          <p><a href="/docs/videos" class="stretched-link">Watch setup & tips videos</a></p>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-headset fa-2x mb-2 text-secondary"></i>
+          <h5>Live Support</h5>
+          <p><a href="mailto:support@innohometech.com" class="stretched-link">Email our support team</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container py-5 fade-in">
+    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAcc">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+            How do I install the Smart Thermostat?
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Mount on a flat wall, connect via our app, and follow the guided setup.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse2">
+            Are sensors battery-powered?
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Yes—each sensor uses AA batteries lasting up to 2 years.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq3">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse3">
+            Can I integrate with Alexa or Google Home?
+          </button>
+        </h2>
+        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
+          <div class="accordion-body">
+            Absolutely—enable our skill/action in your voice assistant’s app.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="container py-5 fade-in">
+    <h2 class="text-center mb-4">Our Products</h2>
+    <div class="row g-4">
+      <!-- Six product cards with modals (same as earlier) -->
+      <!-- ...insert the 6 cards and their modals here... -->
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="container py-5 fade-in">
+    <h2 class="text-center mb-4">Meet the Team</h2>
+    <div class="row g-4 text-center">
+      <div class="col-sm-6 col-lg-4">
+        <img src="https://picsum.photos/seed/team1/200/200" class="rounded-circle mb-3" alt="CEO">
+        <h5>Ayesha Khan</h5>
+        <p>CEO & Founder</p>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <img src="https://picsum.photos/seed/team2/200/200" class="rounded-circle mb-3" alt="CTO">
+        <h5>Bilal Ahmed</h5>
+        <p>CTO</p>
+      </div>
+      <div class="col-sm-6 col-lg-4">
+        <img src="https://picsum.photos/seed/team3/200/200" class="rounded-circle mb-3" alt="COO">
+        <h5>Sara Malik</h5>
+        <p>COO</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-light py-5 fade-in">
+    <div class="container text-center">
+      <h2 class="mb-4">Get in Touch</h2>
+      <div class="contact-text mb-4">
+        <p>
+          <i class="fa fa-envelope me-2"></i>
+          <a href="mailto:info@innohometech.com">info@innohometech.com</a>
+        </p>
+        <p>
+          <i class="fa fa-phone me-2"></i>
+          <a href="tel:+923001234567">+92 300 1234567</a>
+        </p>
+      </div>
+      <div>
+        <a href="https://facebook.com/innohometech" class="contact-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/innohometech" class="contact-link" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/innohometech" class="contact-link" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com/@innohometech" class="contact-link" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-3 fade-in">
+    &copy; <script>document.write(new Date().getFullYear())</script> InnoHomeTech. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
