@@ -2,730 +2,143 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>InnoHomeTech | Smart-Home Solutions</title>
-    <meta name="description"
-        content="InnoHomeTech: Making your home smarter and more comfortable. Control lights, security, and more, all with ease – wherever you are.">
-    <meta property="og:title" content="InnoHomeTech | Smart-Home Solutions">
-    <meta property="og:description"
-        content="Making your home smarter and more comfortable. Control lights, security, and more, all with ease – wherever you are.">
-    <meta property="og:image" content="https://picsum.photos/seed/smarthome/1200/630">
-    <meta property="og:url" content="https://innohometech.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | InnoHomeTech</title>
 
-    <!-- Fonts & CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary: #4A90E2;
-            --secondary: #50E3C2;
-            --dark: #2C3E50;
-            --light: #ecf0f1;
-        }
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: var(--light);
-            color: var(--dark);
-        }
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/style.css">
 
-        html {
-            scroll-behavior: smooth;
-        }
+  <style>
+    .product-card img {
+      height: 250px;
+      object-fit: contain;
+      transition: transform 0.3s ease-in-out;
+    }
 
-        h2 {
-            position: relative;
-            padding-bottom: .5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
 
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
+    .product-card {
+      transition: box-shadow 0.3s ease;
+    }
 
-        .fade-in {
-            opacity: 0;
-        }
+    .product-card:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  </style>
 
-        .aos-init.aos-animate.fade-in {
-            opacity: 1;
-            transition: opacity .8s ease-in;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-
-        .navbar .nav-link {
-            color: #fff !important;
-            font-weight: 600;
-        }
-
-        .navbar .navbar-brand {
-            font-weight: 700;
-        }
-
-        /* Hero */
-        header {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            color: #fff;
-        }
-
-        header .btn-light {
-            background: #fff;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* Cards */
-        .card {
-            border: none;
-            transition: transform .3s, box-shadow .3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, .15);
-        }
-
-        /* Buttons */
-        .btn-primary {
-            background: var(--primary);
-            border-color: var(--primary);
-            font-weight: 600;
-        }
-
-        .btn-primary:hover {
-            background: var(--dark);
-            border-color: var(--dark);
-        }
-
-        /* Feature icons */
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary);
-        }
-
-        /* Contact icons */
-        #contact .contact-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 3.5rem;
-            height: 3.5rem;
-            margin: .25rem;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            color: var(--primary);
-            font-size: 1.25rem;
-            transition: background .3s, color .3s;
-            text-decoration: none;
-        }
-
-        #contact .contact-link:hover {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        #contact .contact-text a {
-            color: var(--dark);
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        #contact .contact-text a:hover {
-            color: var(--primary);
-        }
-
-        /* Back to top */
-        #toTop {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3.5rem;
-            height: 3.5rem;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(90deg, var(--secondary), var(--primary));
-            color: #fff;
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--light);
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">InnoHomeTech</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="nav" class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#stories">Stories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#docs">Support</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <header id="home" class="text-center py-5" style="margin-top:56px" data-aos="fade-down" data-aos-class="fade-in">
-        <div class="container">
-            <h1 class="display-4 fw-bold">InnoHomeTech</h1>
-            <p class="lead mb-4">Making your home smarter and more comfortable. Control lights, security, and more, all
-                with ease – wherever you are.</p>
-            <a href="#products" class="btn btn-light btn-lg me-2 mb-2">
-                <i class="fa fa-shopping-cart me-2"></i>Explore Products
-            </a>
-            <a href="https://demo.innohometech.com" class="btn btn-outline-light btn-lg  mb-2">
-                <i class="fa fa-desktop me-2"></i>Live Demo
-            </a>
-        </div>
-    </header>
-
-    <!-- FEATURES -->
-    <section id="features" class="container py-5" data-aos="fade-right" data-aos-class="fade-in">
-        <h2>Why Choose Us</h2>
-        <div class="row g-4 text-center">
-            <div class="col-md-4" data-aos="fade-up">
-                <i class="fa fa-shield-alt feature-icon mb-3"></i>
-                <h5>Secure by Design</h5>
-                <p>Bank-level encryption & AI threat detection.</p>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <i class="fa fa-leaf feature-icon mb-3"></i>
-                <h5>Energy Efficient</h5>
-                <p>Adaptive devices learn & optimize usage.</p>
-            </div>
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <i class="fa fa-mobile-alt feature-icon mb-3"></i>
-                <h5>Seamless Control</h5>
-                <p>One app to manage every device, anywhere.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section id="products" class="container py-5" data-aos="fade-up" data-aos-class="fade-in">
-        <h2>Our Products</h2>
-        <div class="row g-4">
-            <!-- Thermostat -->
-            <div class="col-sm-6 col-lg-4" data-aos="fade-right">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://picsum.photos/seed/thermostat/600/600" class="card-img-top"
-                        alt="Smart Thermostat">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Smart Thermostat</h5>
-                        <p class="fs-5 text-primary mb-3"><i class="fa fa-tag me-1"></i>$129</p>
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal1">
-                            <i class="fa fa-info-circle me-1"></i>Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Camera -->
-            <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="100">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://picsum.photos/seed/camera/600/600" class="card-img-top" alt="AI Security Camera">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">AI Security Camera</h5>
-                        <p class="fs-5 text-primary mb-3"><i class="fa fa-tag me-1"></i>$199</p>
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal2">
-                            <i class="fa fa-info-circle me-1"></i>Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Hub -->
-            <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="200">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://picsum.photos/seed/hub/600/600" class="card-img-top" alt="Voice-Activated Hub">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Voice-Activated Hub</h5>
-                        <p class="fs-5 text-primary mb-3"><i class="fa fa-tag me-1"></i>$89</p>
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal3">
-                            <i class="fa fa-info-circle me-1"></i>Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Lock -->
-            <div class="col-sm-6 col-lg-4" data-aos="fade-left">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://picsum.photos/seed/lock/600/600" class="card-img-top" alt="Smart Door Lock">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Smart Door Lock</h5>
-                        <p class="fs-5 text-primary mb-3"><i class="fa fa-tag me-1"></i>$159</p>
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal4">
-                            <i class="fa fa-info-circle me-1"></i>Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Motion -->
-            <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="100">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://picsum.photos/seed/motion/600/600" class="card-img-top" alt="Motion Sensor">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Motion Sensor</h5>
-                        <p class="fs-5 text-primary mb-3"><i class="fa fa-tag me-1"></i>$49</p>
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal5">
-                            <i class="fa fa-info-circle me-1"></i>Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Window -->
-            <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="200">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://picsum.photos/seed/window/600/600" class="card-img-top" alt="Window/Door Sensor">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Window/Door Sensor</h5>
-                        <p class="fs-5 text-primary mb-3"><i class="fa fa-tag me-1"></i>$35</p>
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal6">
-                            <i class="fa fa-info-circle me-1"></i>Details
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MODALS -->
-    <!-- Thermostat -->
-    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal1Label">Smart Thermostat</h5><button class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center"><img src="https://picsum.photos/seed/thermostat2/800/600"
-                        class="img-fluid mb-3">
-                    <ul class="text-start">
-                        <li>Remote temperature control</li>
-                        <li>AI learning schedule</li>
-                        <li>Energy usage reports</li>
-                        <li>Alexa & Google Home compatible</li>
-                    </ul>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><a
-                        href="#contact" class="btn btn-primary">Buy Now</a></div>
-            </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #4A90E2;">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="index.html">InnoHomeTech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="pages/smart-plug.html">Smart Plug</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="pages/ir-controller.html">IR Controller</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="pages/smart-door-lock.html">Smart Door Lock</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="pages/smart-circuit-breaker.html">Circuit
+              Breaker</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="pages/smart-wifi-touch-switch.html">Wi-Fi Switch</a>
+          </li>
+          <li class="nav-item"><a class="nav-link text-white" href="pages/team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="pages/faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <!-- Camera -->
-    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal2Label">AI Security Camera</h5><button class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center"><img src="https://picsum.photos/seed/camera2/800/600"
-                        class="img-fluid mb-3">
-                    <ul class="text-start">
-                        <li>1080p HD + night vision</li>
-                        <li>AI person detection</li>
-                        <li>Cloud & local storage</li>
-                    </ul>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><a
-                        href="#contact" class="btn btn-primary">Buy Now</a></div>
-            </div>
-        </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="bg-light text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Welcome to InnoHomeTech</h1>
+      <p class="lead">Smarter living made simple.</p>
     </div>
-    <!-- Hub -->
-    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal3Label">Voice-Activated Hub</h5><button class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center"><img src="https://picsum.photos/seed/hub2/800/600"
-                        class="img-fluid mb-3">
-                    <ul class="text-start">
-                        <li>4-mic far-field array</li>
-                        <li>Built-in assistant</li>
-                        <li>Multi-room audio</li>
-                    </ul>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><a
-                        href="#contact" class="btn btn-primary">Buy Now</a></div>
-            </div>
+  </header>
+
+  <!-- Products Section -->
+  <main class="container my-5">
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card product-card h-100 text-center shadow-sm">
+          <img src="images/smart_plug.jpg" class="card-img-top" alt="Smart Plug">
+          <div class="card-body">
+            <h5 class="card-title">Smart Plug</h5>
+            <a href="pages/smart-plug.html" class="btn btn-primary">Learn More</a>
+          </div>
         </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card h-100 text-center shadow-sm">
+          <img src="images/ir_controller.jpg" class="card-img-top" alt="IR Controller">
+          <div class="card-body">
+            <h5 class="card-title">IR Controller</h5>
+            <a href="pages/ir-controller.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card product-card h-100 text-center shadow-sm">
+          <img src="images/smart_door_lock.jpg" class="card-img-top" alt="Smart Door Lock">
+          <div class="card-body">
+            <h5 class="card-title">Smart Door Lock</h5>
+            <a href="pages/smart-door-lock.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card product-card h-100 text-center shadow-sm">
+          <img src="images/smart_circuit_breaker.jpg" class="card-img-top" alt="Circuit Breaker">
+          <div class="card-body">
+            <h5 class="card-title">Circuit Breaker</h5>
+            <a href="pages/smart-circuit-breaker.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card product-card h-100 text-center shadow-sm">
+          <img src="images/smart_wifi_touch_switch.jpg" class="card-img-top" alt="Wi-Fi Touch Switch">
+          <div class="card-body">
+            <h5 class="card-title">Wi-Fi Touch Switch</h5>
+            <a href="pages/smart-wifi-touch-switch.html" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <!-- Lock -->
-    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modal4Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal4Label">Smart Door Lock</h5><button class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center"><img src="https://picsum.photos/seed/lock2/800/600"
-                        class="img-fluid mb-3">
-                    <ul class="text-start">
-                        <li>Fingerprint & code access</li>
-                        <li>Auto-lock feature</li>
-                        <li>Tamper alerts</li>
-                    </ul>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><a
-                        href="#contact" class="btn btn-primary">Buy Now</a></div>
-            </div>
-        </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center text-white py-3" style="background-color: #2C3E50;">
+    <div class="container">
+      <p>Contact: info@innohometech.com | +92 308 6288157</p>
+      <p class="mb-0">&copy; 2025 InnoHomeTech. All rights reserved.</p>
     </div>
-    <!-- Motion -->
-    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modal5Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal5Label">Motion Sensor</h5><button class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center"><img src="https://picsum.photos/seed/motion2/800/600"
-                        class="img-fluid mb-3">
-                    <ul class="text-start">
-                        <li>120° detection</li>
-                        <li>20 m range</li>
-                        <li>Pet-immune mode</li>
-                    </ul>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><a
-                        href="#contact" class="btn btn-primary">Buy Now</a></div>
-            </div>
-        </div>
-    </div>
-    <!-- Window -->
-    <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="modal6Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal6Label">Window/Door Sensor</h5><button class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body text-center"><img src="https://picsum.photos/seed/window2/800/600"
-                        class="img-fluid mb-3">
-                    <ul class="text-start">
-                        <li>Instant alerts</li>
-                        <li>Hub compatible</li>
-                        <li>Low-battery warning</li>
-                    </ul>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" data-bs-dismiss="modal">Close</button><a
-                        href="#contact" class="btn btn-primary">Buy Now</a></div>
-            </div>
-        </div>
-    </div>
+  </footer>
 
-    <!-- SUCCESS STORIES -->
-    <section id="stories" class="container py-5" data-aos="fade-left" data-aos-class="fade-in">
-        <h2>Success Stories</h2>
-        <div class="row g-4">
-            <div class="col-md-6" data-aos="zoom-in">
-                <div class="p-4 bg-white shadow-sm h-100">
-                    <h5 class="fw-bold">GreenFields Co.</h5>
-                    <p class="fst-italic">“Our energy bill dropped 30% in 60 days.”</p>
-                </div>
-            </div>
-            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                <div class="p-4 bg-white shadow-sm h-100">
-                    <h5 class="fw-bold">MountainView Homes</h5>
-                    <p class="fst-italic">“Zero break-ins since installing smart locks.”</p>
-                </div>
-            </div>
-            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                <div class="p-4 bg-white shadow-sm h-100">
-                    <h5 class="fw-bold">CityView Apartments</h5>
-                    <p class="fst-italic">“Automated lighting cut costs by 20%.”</p>
-                </div>
-            </div>
-            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                <div class="p-4 bg-white shadow-sm h-100">
-                    <h5 class="fw-bold">Sunrise Estates</h5>
-                    <p class="fst-italic">“Voice control made routines seamless.”</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- SUPPORT & DOCUMENTATION -->
-<section id="docs" class="bg-light py-5" data-aos="fade-up" data-aos-class="fade-in">
-    <div class="container text-center">
-        <h2 class="mb-4">Support &amp; Documentation</h2>
-        <div class="row gy-4 justify-content-center align-items-start">
-            <!-- User Manuals -->
-            <div class="col-sm-6 col-md-4" data-aos="flip-left">
-                <i class="fa fa-file-pdf fa-3x mb-3 text-secondary"></i>
-                <h5>User Manuals</h5>
-                <p class="mb-0">
-                    <a href="https://innohometech.com/docs/user-manuals.pdf" target="_blank"
-                        class="d-block text-truncate" style="color: var(--primary); max-width: 100%;">
-                        https://innohometech.com/docs/user-manuals.pdf
-                    </a>
-                </p>
-            </div>
-
-            <!-- Video Tutorials -->
-            <div class="col-sm-6 col-md-4" data-aos="flip-left" data-aos-delay="100">
-                <i class="fa fa-video fa-3x mb-3 text-secondary"></i>
-                <h5>Video Tutorials</h5>
-                <p class="mb-0">
-                    <a href="https://youtu.be/YourPlaylistID" target="_blank" class="d-block text-truncate"
-                        style="color: var(--primary); max-width: 100%;">
-                        https://youtu.be/YourPlaylistID
-                    </a>
-                </p>
-            </div>
-
-            <!-- Live Support -->
-            <div class="col-sm-6 col-md-4" data-aos="flip-left" data-aos-delay="200">
-                <i class="fa fa-headset fa-3x mb-3 text-secondary"></i>
-                <h5>Live Support</h5>
-                <p class="mb-0">
-                    <a href="mailto:support@innohometech.com" style="color: var(--primary);">
-                        support@innohometech.com
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <!-- FAQ -->
-    <section id="faq" class="container py-5" data-aos="fade-right" data-aos-class="fade-in">
-        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
-        <div class="accordion" id="faqAcc">
-            <!-- FAQ 1 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq1">
-                    <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#c1">How do I install the
-                        Smart Thermostat?</button>
-                </h2>
-                <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">Mount on a flat wall, pair via app, and follow guided setup.</div>
-                </div>
-            </div>
-            <!-- FAQ 2 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq2">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c2">Are
-                        sensors battery-powered?</button>
-                </h2>
-                <div id="c2" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">Yes—each sensor uses AA batteries lasting up to 2 years.</div>
-                </div>
-            </div>
-            <!-- FAQ 3 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq3">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c3">Can I
-                        integrate with Alexa or Google Home?</button>
-                </h2>
-                <div id="c3" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">Absolutely—enable our skill/action in your assistant’s app.</div>
-                </div>
-            </div>
-            <!-- FAQ 4 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq4">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c4">What is
-                        the warranty period?</button>
-                </h2>
-                <div id="c4" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">All devices come with a 2-year warranty.</div>
-                </div>
-            </div>
-            <!-- FAQ 5 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq5">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c5">Can I
-                        self-install the sensors?</button>
-                </h2>
-                <div id="c5" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">Yes—each box includes an easy installation guide.</div>
-                </div>
-            </div>
-            <!-- FAQ 6 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq6">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c6">How secure
-                        is my data?</button>
-                </h2>
-                <div id="c6" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">We use AES-256 encryption in transit and at rest.</div>
-                </div>
-            </div>
-            <!-- FAQ 7 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq7">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c7">Do you
-                        offer bulk discounts?</button>
-                </h2>
-                <div id="c7" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">Yes—contact sales@innohometech.com for volume pricing.</div>
-                </div>
-            </div>
-            <!-- FAQ 8 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq8">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c8">Can I
-                        monitor remotely?</button>
-                </h2>
-                <div id="c8" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">Use our mobile app for live feeds and alerts.</div>
-                </div>
-            </div>
-            <!-- FAQ 9 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq9">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c9">What
-                        platforms are supported?</button>
-                </h2>
-                <div id="c9" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">Our app supports iOS 12+ and Android 8+.</div>
-                </div>
-            </div>
-            <!-- FAQ 10 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="faq10">
-                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#c10">How do
-                        firmware updates work?</button>
-                </h2>
-                <div id="c10" class="accordion-collapse collapse" data-bs-parent="#faqAcc">
-                    <div class="accordion-body">Updates are delivered automatically OTA when online.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TEAM -->
-    <section id="team" class="container py-5 text-center" data-aos="fade-up" data-aos-class="fade-in">
-        <h2>Meet the Team</h2>
-        <div class="row g-4">
-            <div class="col-md-4" data-aos="zoom-in"><img src="https://picsum.photos/seed/team1/200/200"
-                    class="rounded-circle mb-2" alt="">
-                <h5>Ayesha Khan</h5>
-                <p>CEO & Founder</p>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><img
-                    src="https://picsum.photos/seed/team2/200/200" class="rounded-circle mb-2" alt="">
-                <h5>Bilal Ahmed</h5>
-                <p>CTO</p>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><img
-                    src="https://picsum.photos/seed/team3/200/200" class="rounded-circle mb-2" alt="">
-                <h5>Sara Malik</h5>
-                <p>COO</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="bg-light py-5 text-center" data-aos="fade-up" data-aos-class="fade-in">
-        <h2>Get in Touch</h2>
-        <div class="contact-text mb-4">
-            <p><i class="fa fa-envelope me-2"></i><a href="mailto:info@innohometech.com">info@innohometech.com</a></p>
-            <p><i class="fa fa-phone me-2"></i><a href="tel:+923086288157">+92 308 6288157</a></p>
-        </div>
-        <div>
-            <a class="contact-link" href="https://wa.me/923086288157" target="_blank"><i
-                    class="fab fa-whatsapp"></i></a>
-            <a class="contact-link" href="https://facebook.com/innohometech" target="_blank"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a class="contact-link" href="https://instagram.com/innohometech" target="_blank"><i
-                    class="fab fa-instagram"></i></a>
-            <a class="contact-link" href="https://twitter.com/innohometech" target="_blank"><i
-                    class="fab fa-twitter"></i></a>
-        </div>
-    </section>
-
-    <!-- BACK TO TOP -->
-    <button id="toTop" title="Back to top"><i class="fa fa-arrow-up"></i></button>
-
-    <!-- FOOTER -->
-    <footer data-aos="fade-up" data-aos-class="fade-in">
-        <div class="container py-4">
-            <div class="row text-white">
-                <div class="col-md-4">
-                    <h5>About</h5>
-                    <p>InnoHomeTech: Smarter homes, happier living.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contact</h5>
-                    <p><i class="fa fa-envelope me-2"></i>info@innohometech.com</p>
-                    <p><i class="fa fa-phone me-2"></i>+92 308 6288157</p>
-                </div>
-            </div>
-        </div>
-        <div class="text-center py-2">&copy;
-            <script>document.write(new Date().getFullYear())</script> InnoHomeTech. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- JS: Bootstrap & AOS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ once: false, duration: 800, offset: 100 });
-        const toTop = document.getElementById('toTop');
-        window.addEventListener('scroll', () => { toTop.style.display = window.scrollY > 300 ? 'flex' : 'none'; });
-        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    </script>
 </body>
 
 </html>
