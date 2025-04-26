@@ -9,11 +9,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../images/logo.jpg">
-
+  <link rel="icon" type="image/png" href="../images/logo.jpg">
   <link rel="stylesheet" href="../css/style.css">
 
   <style>
+    :root {
+      --primary-color: #23B0A7;
+      --secondary-color: #253746;
+    }
+
     html,
     body {
       height: 100%;
@@ -22,10 +26,20 @@
     body {
       display: flex;
       flex-direction: column;
+      color: var(--secondary-color);
     }
 
     main {
       flex: 1;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--primary-color);
     }
 
     .product-image {
@@ -46,11 +60,21 @@
     ul.list-group li::before {
       content: '✔️';
       margin-right: 10px;
-      color: #4A90E2;
+      color: var(--primary-color);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
     }
 
     footer {
-      background-color: #2C3E50;
+      background-color: var(--secondary-color);
       font-size: 0.9rem;
       padding: 20px 0;
     }
@@ -64,10 +88,11 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg" style="background-color: #4A90E2;">
+  <nav class="navbar navbar-expand-lg" style="background-color: var(--primary-color);">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2 text-white fw-bold" href="../index.html">
-        <img src="../images/logo.jpg" alt="InnoHomeTech Logo" width="35" height="35" style="object-fit: contain;">
+        <img src="../images/logo.jpg" alt="InnoHomeTech Logo" width="60" height="60"
+          style="object-fit: cover; border-radius: 50%;">
         InnoHomeTech
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -81,7 +106,7 @@
           <li class="nav-item"><a class="nav-link text-white" href="smart-circuit-breaker.html">Circuit Breaker</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="smart-wifi-touch-switch.html">Wi-Fi Switch</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="team.html">Team</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="faq.html">FAQs</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -91,7 +116,7 @@
   <!-- Page Header -->
   <header class="bg-light text-center py-5">
     <div class="container" data-aos="fade-down">
-      <h1 class="display-5">Smart IR Controller (All-in-One Remote)</h1>
+      <h1 class="display-5">Smart IR Controller (All-in-One Remote System)</h1>
       <p class="lead">Control multiple appliances with a single smart device.</p>
     </div>
   </header>
@@ -101,11 +126,11 @@
     <div class="row align-items-center g-5">
 
       <div class="col-md-6" data-aos="fade-right">
-        <img src="../images/ir_controller.jpg" class="img-fluid product-image" alt="IR Controller">
+        <img src="../images/ir_controller.jpg" class="img-fluid product-image" alt=" Smart IR Controller (All-in-One Remote System)">
       </div>
 
       <div class="col-md-6" data-aos="fade-left">
-        <h3 class="mb-3 text-primary">Why Choose Our IR Controller?</h3>
+        <h3 class="mb-3">Why Choose Our Smart IR Controller (All-in-One Remote System)?</h3>
         <p>Replace multiple remotes (AC, TV, LED) with just one smart device. Simplify your living room, bedroom, or
           office.</p>
         <ul class="list-group mb-4">
