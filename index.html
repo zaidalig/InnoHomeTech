@@ -123,9 +123,17 @@
     </div>
   </header>
 
-  <div class="d-flex justify-content-center align-items-center">
-    <video src='./intro.mp4' autoplay controls loop muted style="height: 400px; width: 600px;"></video>
+  <style>
+    .responsive-video {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      background-color: #fff;
+    }
+  </style>
 
+  <div class="d-flex justify-content-center align-items-center">
+    <video class="responsive-video" src="./intro.mp4" autoplay controls loop muted></video>
   </div>
 
   <!-- Products Section -->
